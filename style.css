@@ -10,6 +10,8 @@
     --colorgrey: #A0A1A4;
   }
 
+
+
 body{
     margin-left: 40px;
     margin-right: 40px;
@@ -32,10 +34,12 @@ header {
 header h1 {
     font-size: 1rem;
     color: #333;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 header a{
     text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 header a:hover {
@@ -60,6 +64,7 @@ header li,ul {
     background-color: var(--colorblue);
     padding: 10px;
     border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 
@@ -73,6 +78,7 @@ header li,ul {
     background-color: var(--colorred);
     padding: 20px;
     border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .product-grid{
