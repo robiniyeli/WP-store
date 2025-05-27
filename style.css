@@ -1,0 +1,82 @@
+
+/* Use these colors for CSS, they are subject to change, but it makes our life easier */
+:root { 
+    --colorred: #BA000C;
+    --colorwhite: #FFFFFF;
+    --colordarkgrey: #232323;
+    --colorfont: #313133;
+    --colorlightgrey: #F4F4F4;
+    --colorblue: #003E7E;
+    --colorgrey: #A0A1A4;
+  }
+
+body{
+    margin-left: 40px;
+    margin-right: 40px;
+    background-color: var(--colorlightgrey);
+}
+
+
+/* header + navigation */
+header {
+    grid-template-columns: 0.4fr 1fr;
+    display: grid;
+    gap: 40px   ;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    background-color: var(--colorgrey);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+header h1 {
+    font-size: 1rem;
+    color: #333;
+}
+
+header a{
+    text-decoration: none;
+}
+
+header a:hover {
+    color: #007BFF;
+}
+
+header li,ul {
+    list-style: none;
+    gap: 40px;
+    float: right;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+/* Hero */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    background-color: var(--colorblue);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+
+.feature-products{
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 20px;
+    margin-top: 20px;
+    justify-items: center;
+    background-color: var(--colorred);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.product-grid{
+    grid-template-columns: 1fr 1fr 1fr;
+    display: grid;
+    gap: 40px;
+}
