@@ -1,12 +1,12 @@
 
 /* Use these colors for CSS, they are subject to change, but it makes our life easier */
 :root { 
-    --colorred: #BA000C;
+    --colordarkred: #620205;
     --colorwhite: #FFFFFF;
     --colordarkgrey: #232323;
-    --colorfont: #313133;
+    --colorlightorange: #F19230;
     --colorlightgrey: #F4F4F4;
-    --colorblue: #003E7E;
+    --coloryellow: #FFE767;
     --colorgrey: #A0A1A4;
   }
 
@@ -21,7 +21,7 @@ body{
 header {
     grid-template-columns: 0.4fr 1fr;
     display: grid;
-    background-color: var(--colordarkgrey);
+    background-color: var(--coloryellow);
     padding: 20px 150px 20px 150px;
     margin-left:0;
     align-items: center;
@@ -37,12 +37,13 @@ header a{
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
     transition: 0.3s ease-in-out;
-    color: var(--colorwhite);
+    color: var(--colordarkred);
     font-size: 18px;
+    font-weight: bold;
 }
 
 header a:hover {
-    color: var(--colorred);
+    color: var(--colorwhite);
     transition: 0.3s ease-in-out;
 }
 
@@ -59,7 +60,7 @@ header li,ul {
     text-decoration: none;
     color: var(--colorwhite);
     font-weight: bold;
-    background-color: var(--colorgrey);
+    background-color: var(--colordarkred);
     padding: 25px;
     border-radius: 5px;
     transition: 0.3s ease-in-out;
@@ -69,8 +70,8 @@ header li,ul {
 }
 
 .hero button:hover {
-    background-color: var(--colorred);
-    color: var(--colorwhite);
+    background-color: var(--coloryellow);
+    color: var(--colordarkred);
 }
 
 .hero{
@@ -120,8 +121,9 @@ header li,ul {
     justify-items: center;
     padding: 20px;
     padding-top: 100px;
+    padding-bottom: 100px;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: var(--colorred);
+    background-color: var(--colorlightorange);
 }
 
 .product-grid{
@@ -139,9 +141,9 @@ header li,ul {
 
 .product a {
     text-decoration: none;
-    color: var(--colorwhite);
+    color: var(--coloryellow);
     font-weight: bold;
-    background-color: var(--colordarkgrey);
+    background-color: var(--colordarkred);
     padding: 10px;
     border-radius: 5px;
     transition: 0.3s ease-in-out;
@@ -149,14 +151,14 @@ header li,ul {
 }
 
 .product a:hover {
-    background-color: var(--colorred);
-    color: var(--colorwhite);
+    background-color: var(--coloryellow);
+    color: var(--colordarkred);
 }
 
 footer {
     padding: 20px;
-    background-color: var(--colordarkgrey);
-    color: var(--colorwhite);
+    background-color: var(--coloryellow);
+    color: var(--colordarkred);
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
 }
