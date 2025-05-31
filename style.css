@@ -11,7 +11,7 @@
   }
 
 body{
-    background-color: var(--colorlightorange);
+    background-color: var(--colordarkred);
     background-size: cover;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -190,6 +190,22 @@ footer {
     padding: 20px;
     margin-bottom: 20px;
     border: 1px solid var(--colorgrey);
+    grid-template-columns: 1fr ;
+    display: grid;
+  }
+
+  .card label {
+    background-color: var(--colorwhite);
+    padding: 10px 20px 10px 20px;
+    max-width: 250px;
+    border-radius: 4px;
+    transition: 0.2s ease-in-out;
+  }
+
+  .card label:hover {
+    background-color: var(--coloryellow);
+    color: var(--colordarkred);
+    cursor: pointer;
   }
   
   .item {
@@ -245,6 +261,7 @@ footer {
     cursor: pointer;
     font-weight: bold;
     transition: background 0.3s ease-in-out;
+    max-width: 250px;
   }
   
   .small-btn:hover {
@@ -253,8 +270,16 @@ footer {
   }
   
   .summary {
-    text-align: right;
+    text-align: left;
     margin-top: 30px;
+    background: var(--colorlightgrey);
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid var(--colorgrey);
+    grid-template-columns: 1fr ;
+    display: grid;
+
   }
   
   .summary .total {
@@ -273,6 +298,7 @@ footer {
     cursor: pointer;
     margin-top: 10px;
     transition: background 0.3s ease-in-out;
+    max-width: 250px;
   }
   
   .order-btn:hover {
