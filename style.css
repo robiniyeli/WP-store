@@ -11,9 +11,10 @@
   }
 
 body{
-    background-color: var(--colordarkgrey);
+    background-color: var(--colorlightorange);
     background-size: cover;
     margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
 
 }
 
@@ -162,3 +163,120 @@ footer {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+/* CODE FOR CHECKOUT PAGE */
+/* === Checkout page styling overrides/additions === */
+
+.checkout-container {
+    max-width: 1000px;
+    margin: 50px auto;
+    background: var(--colorlightorange);
+    padding: 30px;
+    border-radius: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    color: var(--colordarkgrey);
+  }
+  
+  .checkout-container h1,
+  .checkout-container h2 {
+    color: var(--colordarkred);
+    margin-bottom: 15px;
+  }
+  
+  .card {
+    background: var(--colorlightgrey);
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid var(--colorgrey);
+  }
+  
+  .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .price {
+    font-weight: bold;
+    color: var(--colordarkred);
+  }
+  
+  .date-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .date-card {
+    background: var(--colorgrey);
+    color: var(--colorwhite);
+    padding: 12px;
+    border-radius: 6px;
+    width: 150px;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: 0.2s ease-in-out;
+  }
+  
+  .date-card:hover {
+    border-color: var(--colordarkred);
+    background-color: var(--colordarkred);
+  }
+  
+  .date-card.selected {
+    background: var(--colordarkred);
+    border-color: var(--colorlightorange);
+  }
+  
+  ul {
+    padding-left: 20px;
+  }
+  
+  .small-btn {
+    background: var(--colordarkred);
+    color: var(--colorwhite);
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .small-btn:hover {
+    background: var(--coloryellow);
+    color: var(--colordarkred);
+  }
+  
+  .summary {
+    text-align: right;
+    margin-top: 30px;
+  }
+  
+  .summary .total {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--colordarkred);
+  }
+  
+  .order-btn {
+    background-color: var(--colordarkred);
+    color: var(--colorwhite);
+    padding: 14px 28px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .order-btn:hover {
+    background-color: var(--coloryellow);
+    color: var(--colordarkred);
+  }
+  

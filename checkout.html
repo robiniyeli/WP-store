@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>bol | Bestellen</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="img/logo.webp" alt="Logo"></a>
+        <nav>
+            <ul>
+                <li><a href="checkout.html">Checkout</a></li>
+                <li><a href="#">Cart</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="index.html">Home</a></li>            
+            </ul>
+        </nav>
+    </header>
+  <main class="checkout-container">
+    <h1>Animal World | Checkout</h1>
+
+    <!-- Product discription -->
+    <section class="card">
+      <h2>Products</h2>
+      <div class="item">
+        <p><strong>YONO Case</strong><br/>Geschikt voor Fujifilm Instax Mini Link 2</p>
+        <p class="price">€13,59</p>
+      </div>
+    </section>
+
+    <!-- Payment method -->
+    <section class="card">
+      <h2>Betaalmethode</h2>
+      <label><input type="radio" name="payment" checked> iDEAL</label><br/>
+      <label><input type="radio" name="payment"> Debit Card</label><br/>
+      <label><input type="radio" name="payment"> Pay later</label>
+    </section>
+
+    <!-- Adress -->
+    <section class="card">
+      <h2>Adress</h2>
+      <p><strong>Robin Iyeli</strong><br/>
+      Tweede Hunzestraat 14<br/>
+      9715 BR Groningen</p>
+      <button class="small-btn">Change adess</button>
+    </section>
+
+    <!-- Afhaalpunt -->
+    <section class="card">
+      <h2>Pickup point</h2>
+      <p>Primera Beren<br/>Beren 3, 9714DW Groningen</p>
+      <button class="small-btn">Choose another pickup point</button>
+    </section>
+
+    <!-- Bezorgmoment -->
+    <section class="card">
+      <h2>Moment of delivery</h2>
+      <div class="date-grid">
+        <div class="date-card selected">Ma 2 juni<br/><small>08:00–22:00</small></div>
+        <div class="date-card">Ma 2 juni<br/><small>17:30–22:00<br/>+ €1,99</small></div>
+        <div class="date-card">Di 3 juni<br/><small>08:00–22:00</small></div>
+      </div>
+    </section>
+
+    <!-- Factuuradres -->
+    <section class="card">
+      <h2>Invoice adress</h2>
+      <p>Hoofdweg 236, BOVENSMILDE</p>
+      <button class="small-btn">Verander factuuradres</button>
+    </section>
+
+    <!-- Besteloverzicht -->
+    <section class="summary">
+        <h2>Overview</h2>
+      <p>Articles: €13,59</p>
+      <p>Shipping costs: €2,99</p>
+      <p class="total">Total: €16,58</p>
+      <button class="order-btn">Order and pay now!</button><br><br>
+      <small>Door te bestellen ga je akkoord met de <a href="#">algemene voorwaarden</a>.</small>
+    </section>
+  </main>
+</body>
+</html>
