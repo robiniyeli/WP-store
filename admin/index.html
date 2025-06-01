@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+  <div class="admin-container">
+    <aside class="sidebar">
+      <h2 class="logo">Admin Panel</h2>
+      <nav class="menu">
+        <ul>
+          <li data-section="dashboard" class="active"><span>📊</span> Dashboard</li>
+          <li data-section="products"><span>🛒</span> Products</li>
+          <li data-section="orders"><span>📦</span> Orders</li>
+          <li data-section="users"><span>👤</span> Users</li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header>
+        <h1 id="section-title">Dashboard</h1>
+      </header>
+
+      <section id="dashboard" class="panel-section active">
+        <!-- Dashboard content -->
+      </section>
+
+      <section id="products" class="panel-section">
+        <!-- Products management -->
+      </section>
+
+      <section id="orders" class="panel-section">
+        <!-- Orders management -->
+      </section>
+
+      <section id="users" class="panel-section">
+        <!-- Users management -->
+      </section>
+    </main>
+  </div>
+
+  <script src="../js/admin.js"></script>
+</body>
+</html>
