@@ -305,4 +305,26 @@ footer {
     background-color: var(--coloryellow);
     color: var(--colordarkred);
   }
+
+  /* STYLING FOR CATALOGUE */
+  .catalogue-controls {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 90%;
+    max-width: 1200px;
+}
+
+.catalogue-controls select {
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 2px solid var(--colordarkred);
+    background-color: var(--colorwhite);
+    color: var(--colordarkred);
+    font-weight: bold;
+}
+
   
