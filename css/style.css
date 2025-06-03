@@ -203,7 +203,7 @@
   /* css/style.css */
 
 /* General Styles */
-  .container, .checkout-container {
+  .container, .checkout-container, .login-container, .signup-container, .userprofile-container {
     max-width: 1200px;
     margin: 20px auto;
     padding: 20px;
@@ -299,6 +299,89 @@
   
   .order-btn:hover {
     background-color: #218838;
+  }
+
+  /* Login Page */
+  .login-container .form-group input[type=email], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  .login-container form {
+    margin-top: 20px;
+  }
+
+  .signin-btn {
+    font-size: 15px;
+    background-color: var(--color-primary);
+    color: #fff;
+    padding: 10px 20px;
+    margin: 15px 15px 15px 0;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .signin-btn:hover {
+    background-color: var(--color-accent);
+    color: var(--color-text);
+  }
+
+  /* Sign Up Page */
+  .signup-container .form-group input[type=email], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 10px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  .signup-container p {
+    margin: 10px 0;
+  }
+
+  .signup-btn {
+    font-size: 15px;
+    background-color: var(--color-primary);
+    color: #fff;
+    padding: 10px 20px;
+    margin: 15px 15px 15px 0;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .signup-btn:hover {
+    background-color: var(--color-accent);
+    color: var(--color-text);
+  }
+
+  /* User Profile Page */
+  .info-card {
+    margin: 15px 0;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+  }
+
+  .info-card .order {
+    margin: 20px;
+  }
+
+  .info-card .order span {
+    margin-left: 10px;
+  }
+
+  .address {
+    margin: 20px 0;
   }
 
   /* Header */
