@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Animal World - Home</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal World - User Profile</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
+    <header>
     <a href="index.html"><img src="img/logo.webp" alt="Animal World Logo"></a>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="products.html">Products</a></li>
-        <li><a href="login.html">Login</a></li>
+        <li><a href="userprofile.html">Account</a></li>
         <li><a href="cart.html"><li class="cart-icon">
             <a href="cart.html">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 47.998 40.34">
@@ -28,55 +28,43 @@
     </nav>
   </header>
 
-  <div class="hero">
-    <img src="img/heroimage.jpg" alt="Animal World">
-    <div class="hero-text">
-      <h1>Animal World</h1>
-      <p>Discover the Best Deals on Your Favorite Products</p>
-      <button onclick="location.href='products.html'">Shop Now</button>
+  <main class="userprofile-container">
+    <h1>My Account</h1>
+    <div>
+        <a href="login.html">Log out</a>
     </div>
-  </div>
 
-  <section class="product-section">
-    <div class="container">
-      <h2>Featured Products</h2>
-      <div class="product-grid">
-        <!-- Product 1 -->
-        <div class="product">
-          <img src="img/2cats.JPG" alt="2 Young Cats">
-          <h3>2 Young Cats</h3>
-          <p class="price">$299.99</p>
-          <a href="#" class="btn">Add to Cart</a>
-        </div>
-        
-        <!-- Product 2 -->
-        <div class="product">
-          <img src="img/darkcat.JPG" alt="Dark Cat">
-          <h3>Dark Cat</h3>
-          <p class="price">$169.99</p>
-          <a href="#" class="btn">Add to Cart</a>
-        </div>
-        
-        <!-- Product 3 -->
-        <div class="product">
-          <img src="img/dog.JPG" alt="Young Dog">
-          <h3>Young Dog</h3>
-          <p class="price">$249.99</p>
-          <a href="#" class="btn">Add to Cart</a>
-        </div>
-      </div>
+    <div class="info-card">
+        <h2>Order History</h2>
+            <div class="order">
+                <p><b>Order</b> <span><a href="#">#AW2345</a></span></p>
+                <p><b>Date</b> <span>Jun 03, 2025</span></p>
+                <p><b>Payment</b> <span>Fullfilled</span></p>
+                <p><b>Total</b> <span>$399.00</span></p>
+            </div>
+            <div class="order">
+                <p><b>Order</b> <span><a href="#">#AW2002</a></span></p>
+                <p><b>Date</b> <span>Nov 27, 2024</span></p>
+                <p><b>Payment</b> <span>Fullfilled</span></p>
+                <p><b>Total</b> <span>$299.00</span></p>
+            </div>
     </div>
-  </section>
 
-  <footer>
-    <p>&copy; 2023 Animal World. All rights reserved.</p>
-    <nav>
-      <a href="#">Terms</a> | 
-      <a href="#">Privacy</a> | 
-      <a href="admin/">Admin</a>
-    </nav>
-  </footer>
 
-  <script src="js/main.js"></script>
+    <div class="info-card">
+        <h2>Account Details</h2>
+        <div class="address">
+            <p><span>Jane Doe</span></p>
+            <p><span>130 Gongneung-ro, Nowon-gu</span></p>
+            <p><span>01811 Seoul</span><p>
+            <p><span>Republic of Korea</span></p>
+        </div>
+        <div>
+            <a href="#">Edit account details</a>
+        </div>
+    </div>
+  </main>
+
+
 </body>
 </html>

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Animal World - Home</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal World - Login</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header>
@@ -28,55 +28,33 @@
     </nav>
   </header>
 
-  <div class="hero">
-    <img src="img/heroimage.jpg" alt="Animal World">
-    <div class="hero-text">
-      <h1>Animal World</h1>
-      <p>Discover the Best Deals on Your Favorite Products</p>
-      <button onclick="location.href='products.html'">Shop Now</button>
-    </div>
-  </div>
+  <main class="login-container">
+    <h1>Login</h1>
+    <section>
+        <form action="userprofile.html">
+            <div class="form-group">
+                <label for="email"><b>Email address</b></label>
+                <input type="email" placeholder="Enter Email address" name="uname" required>
+            </div>
+            <div class="form-group">
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+            </div>
+            <div>
+                <button type="submit" class="signin-btn">Sign In</button>
+                <label style="font-size: 12px;">
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+            </div>
+            <div>
+                <a href="#">Forgot password?</a>
+            </div>
+            <div>
+                <span>Don't have an account yet? <a href="signup.html">Sign Up</a></span>
+            </div>
+        </form>
+    </section>
+  </main>
 
-  <section class="product-section">
-    <div class="container">
-      <h2>Featured Products</h2>
-      <div class="product-grid">
-        <!-- Product 1 -->
-        <div class="product">
-          <img src="img/2cats.JPG" alt="2 Young Cats">
-          <h3>2 Young Cats</h3>
-          <p class="price">$299.99</p>
-          <a href="#" class="btn">Add to Cart</a>
-        </div>
-        
-        <!-- Product 2 -->
-        <div class="product">
-          <img src="img/darkcat.JPG" alt="Dark Cat">
-          <h3>Dark Cat</h3>
-          <p class="price">$169.99</p>
-          <a href="#" class="btn">Add to Cart</a>
-        </div>
-        
-        <!-- Product 3 -->
-        <div class="product">
-          <img src="img/dog.JPG" alt="Young Dog">
-          <h3>Young Dog</h3>
-          <p class="price">$249.99</p>
-          <a href="#" class="btn">Add to Cart</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2023 Animal World. All rights reserved.</p>
-    <nav>
-      <a href="#">Terms</a> | 
-      <a href="#">Privacy</a> | 
-      <a href="admin/">Admin</a>
-    </nav>
-  </footer>
-
-  <script src="js/main.js"></script>
 </body>
 </html>
