@@ -1,75 +1,126 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const productsSection = document.getElementById("products");
-    const productsList = document.createElement("div");
-    productsList.className = "admin-products";
-    productsSection.appendChild(productsList);
-  
-    let products = JSON.parse(localStorage.getItem("products")) || [];
-  
-    function renderProducts() {
-      productsList.innerHTML = "";
-  
-      products.forEach((product, index) => {
-        const productEl = document.createElement("div");
-        productEl.classList.add("admin-product");
-        productEl.innerHTML = `
-          <img src="${product.image}" alt="${product.name}">
-          <strong>${product.name}</strong>
-          <span>Price: ${product.price}</span>
-          <span>Stock: <input type="number" data-index="${index}" class="stock-input" value="${product.stock}" /></span>
-          <button class="delete-btn" data-index="${index}">Delete</button>
-        `;
-        productsList.appendChild(productEl);
-      });
+// Handle section switching
+const menuItems = document.querySelectorAll('.menu li');
+const sections = document.querySelectorAll('.panel-section');
+const sectionTitle = document.getElementById('section-title');
+
+menuItems.forEach(item => {
+  item.addEventListener('click', () => {
+    // Remove active class from all
+    menuItems.forEach(i => i.classList.remove('active'));
+    sections.forEach(s => s.classList.remove('active'));
+
+    // Add active to clicked
+    item.classList.add('active');
+    const target = item.getAttribute('data-section');
+    const section = document.getElementById(target);
+    section.classList.add('active');
+
+    // Update section title
+    sectionTitle.textContent = item.textContent.trim();
+
+    // Hide product modal if switching away from products section
+    if (target !== 'products') {
+      const modal = document.getElementById('productModal');
+      if (modal) modal.style.display = 'none';
     }
-  
-    // Update stock live
-    productsList.addEventListener("input", (e) => {
-      if (e.target.classList.contains("stock-input")) {
-        const index = e.target.dataset.index;
-        products[index].stock = parseInt(e.target.value, 10);
-        localStorage.setItem("products", JSON.stringify(products));
-      }
-    });
-  
-    // Delete product
-    productsList.addEventListener("click", (e) => {
-      if (e.target.classList.contains("delete-btn")) {
-        const index = e.target.dataset.index;
-        products.splice(index, 1);
-        localStorage.setItem("products", JSON.stringify(products));
-        renderProducts();
-      }
-    });
-  
-    // Add product form (optional)
-    const addForm = document.createElement("form");
-    addForm.innerHTML = `
-      <h3>Add New Product</h3>
-      <input type="text" placeholder="Name" name="name" required>
-      <input type="text" placeholder="Price" name="price" required>
-      <input type="text" placeholder="Image URL" name="image" required>
-      <input type="number" placeholder="Stock" name="stock" required>
-      <button type="submit">Add Product</button>
-    `;
-    productsSection.appendChild(addForm);
-  
-    addForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const formData = new FormData(addForm);
+  });
+});
+
+// Handle delete buttons in Users section
+document.querySelectorAll('#users button').forEach(btn => {
+  btn.addEventListener('click', function () {
+    const row = this.closest('tr');
+    if (row) row.remove();
+  });
+});
+
+let products = [];
+
+const addProductBtn = document.getElementById("addProductBtn");
+const modal = document.getElementById("productModal");
+const closeModal = document.querySelector(".close-btn");
+const form = document.getElementById("productForm");
+const productTable = document.getElementById("productTableBody");
+const modalTitle = document.getElementById("modalTitle");
+
+addProductBtn.onclick = () => {
+  openModal();
+};
+
+closeModal.onclick = () => {
+  modal.style.display = "none";
+};
+
+window.onclick = (e) => {
+  if (e.target == modal) {
+    modal.style.display = "none";
+  }
+};
+
+form.onsubmit = function (e) {
+  e.preventDefault();
+  const id = document.getElementById("productId").value;
+  const name = document.getElementById("productName").value;
+  const price = document.getElementById("productPrice").value;
+  const stock = document.getElementById("productStock").value;
+  const image = document.getElementById("productImage").files[0];
+
+  const reader = new FileReader();
+  reader.onloadend = function () {
+    const imageUrl = reader.result;
+
+    if (id) {
+      const index = products.findIndex(p => p.id === id);
+      products[index] = { id, name, price, stock, imageUrl };
+    } else {
       const newProduct = {
-        id: Date.now(),
-        name: formData.get("name"),
-        price: formData.get("price"),
-        image: formData.get("image"),
-        stock: parseInt(formData.get("stock"), 10),
+        id: Date.now().toString(),
+        name,
+        price,
+        stock,
+        imageUrl
       };
       products.push(newProduct);
-      localStorage.setItem("products", JSON.stringify(products));
-      addForm.reset();
-      renderProducts();
-    });
-  
+    }
+
     renderProducts();
+    modal.style.display = "none";
+    form.reset();
+  };
+
+  if (image) {
+    reader.readAsDataURL(image);
+  } else {
+    reader.onloadend();
+  }
+};
+
+function renderProducts() {
+  productTable.innerHTML = "";
+  products.forEach(product => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td><img src="${product.imageUrl || ''}" alt="${product.name}"></td>
+      <td>${product.name}</td>
+      <td>$${product.price}</td>
+      <td>${product.stock}</td>
+      <td><button onclick="editProduct('${product.id}')">Edit</button></td>
+    `;
+    productTable.appendChild(row);
   });
-  
+}
+
+function openModal(product = null) {
+  modal.style.display = "block";
+  modalTitle.textContent = product ? "Edit Product" : "Add Product";
+  document.getElementById("productId").value = product?.id || "";
+  document.getElementById("productName").value = product?.name || "";
+  document.getElementById("productPrice").value = product?.price || "";
+  document.getElementById("productStock").value = product?.stock || "";
+}
+
+function editProduct(id) {
+  const product = products.find(p => p.id === id);
+  openModal(product);
+}
+
