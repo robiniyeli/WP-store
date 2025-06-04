@@ -66,30 +66,43 @@ document.addEventListener("DOMContentLoaded", () => {
   
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
   
-    function renderCart() {
-      cartItemsContainer.innerHTML = "";
-      let subtotal = 0;
-  
-      cart.forEach((item, index) => {
-        const itemTotal = parseFloat(item.price.replace("$", "")) * item.quantity;
-        subtotal += itemTotal;
-  
-        const cartItem = document.createElement("div");
-        cartItem.classList.add("cart-item");
-        cartItem.innerHTML = `
-          <img src="${item.image}" alt="${item.name}">
-          <span>${item.name}</span>
-          <span>${item.quantity}</span>
-          <span>${item.price}</span>
-          <span>$${itemTotal.toFixed(2)}</span>
-          <button class="remove-btn" data-index="${index}">Remove</button>
-        `;
-        cartItemsContainer.appendChild(cartItem);
-      });
-  
-      subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
-      totalElement.textContent = `$${(subtotal + shippingCost).toFixed(2)}`;
-    }
+function renderCart() {
+  cartItemsContainer.innerHTML = "";
+  let subtotal = 0;
+
+  const emptyMessage = document.getElementById("empty-cart-message");
+  const summary = document.querySelector(".cart-summary");
+
+  if (cart.length === 0) {
+    emptyMessage.style.display = "block";
+    summary.style.display = "none";
+    return;
+  } else {
+    emptyMessage.style.display = "none";
+    summary.style.display = "block";
+  }
+
+  cart.forEach((item, index) => {
+    const itemTotal = parseFloat(item.price.replace("$", "")) * item.quantity;
+    subtotal += itemTotal;
+
+    const cartItem = document.createElement("div");
+    cartItem.classList.add("cart-item");
+    cartItem.innerHTML = `
+      <img src="${item.image}" alt="${item.name}">
+      <span>${item.name}</span>
+      <span>${item.quantity}</span>
+      <span>${item.price}</span>
+      <span>$${itemTotal.toFixed(2)}</span>
+      <button class="remove-btn" data-index="${index}">Remove</button>
+    `;
+    cartItemsContainer.appendChild(cartItem);
+  });
+
+  subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+  totalElement.textContent = `$${(subtotal + shippingCost).toFixed(2)}`;
+}
+
   
     cartItemsContainer.addEventListener("click", (e) => {
       if (e.target.classList.contains("remove-btn")) {
